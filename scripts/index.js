@@ -26,6 +26,24 @@ function playRound(playerSelection, computerSelection) {
         case computerSelection === "SCISSORS" && playerSelection === "PAPER":
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         case playerSelection === computerSelection:
-            return "DRAW! Continue?";
+            return "It's a DRAW!";
     }
+}
+
+// Play a 5 round game that keeps score
+// Reports a winner or loser at the end and for each round
+function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+    for (let gameCounter = 0; gameCounter < 5; gameCounter++) {
+        let playerSelection = prompt("Type rock, paper, or scissors");
+        let result = playRound(playerSelection, computerPlay());
+        console.log(result);
+        if (result.includes("Win")) {
+            ++playerWins;
+        } else if (result.includes("Lose")) {
+            ++computerWins;
+        }
+    }
+    (playerWins > computerWins) ? console.log("Congratulations, You Won!") : console.log("Awww, You Lose!");
 }
