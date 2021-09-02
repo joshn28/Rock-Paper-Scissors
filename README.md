@@ -1,0 +1,1 @@
+The purpose of this project was to create a game of Rock Paper Scissors that could be played through the browser console. The skills that I have demonstrated through this project are my problem solving skills and the Fundamentals of JavaScript such as conditionals, functions, switch statements, ternary operators, template literals, window prompts.
