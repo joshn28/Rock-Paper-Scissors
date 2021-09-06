@@ -1,4 +1,3 @@
-// Make computer randomly select Rock, Paper or Scissors
 function computerPlay() {
     let move = Math.floor(Math.random() * 3);
     if (move == 0) {
@@ -10,9 +9,6 @@ function computerPlay() {
     }
 }
 
-// Plays a single round of Rock Paper Scissors
-// Get the input from the player and the computer
-// Return the string that declares the winner of the round or draw
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toUpperCase();
     computerSelection = computerSelection.toUpperCase();
@@ -30,20 +26,17 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Play a 5 round game that keeps score
-// Reports a winner or loser at the end and for each round
-function game() {
-    let playerWins = 0;
-    let computerWins = 0;
-    for (let gameCounter = 0; gameCounter < 5; gameCounter++) {
-        let playerSelection = prompt("Type rock, paper, or scissors");
-        let result = playRound(playerSelection, computerPlay());
-        console.log(result);
-        if (result.includes("Win")) {
-            ++playerWins;
-        } else if (result.includes("Lose")) {
-            ++computerWins;
-        }
-    }
-    (playerWins > computerWins) ? console.log("Congratulations, You Won!") : console.log("Awww, You Lose!");
-}
+const rockBtn = document.querySelector("button[value='rock']");
+rockBtn.addEventListener('click', (e) => {
+    console.log(playRound(e.originalTarget.value, computerPlay()));
+});
+
+const paperBtn = document.querySelector("button[value='paper']");
+paperBtn.addEventListener('click', (e) => {
+    console.log(playRound(e.originalTarget.value, computerPlay()));
+});
+
+const scissorsBtn = document.querySelector("button[value='scissors']");
+scissorsBtn.addEventListener('click', (e) => {
+    console.log(playRound(e.originalTarget.value, computerPlay()));
+});
