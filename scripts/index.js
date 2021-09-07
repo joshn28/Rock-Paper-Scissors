@@ -32,19 +32,21 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+    score.innerText = `Human: ${humanWins} CPU: ${computerWins}`;
     if (humanWins > 4 || computerWins > 4) {
         if (humanWins > computerWins) {
+            audio.item(1).play();
             message.innerText = "Congratulations, You Won!";
         } else {
+            audio.item(0).play();
             message.innerText = "Awww, You Lose!";
         }
         restartGame();
     }
-    score.innerText = `Human: ${humanWins} CPU: ${computerWins}`;
 }
 
 function restartGame() {
-    const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('input');
     buttons.forEach((button) => {
         button.style.display = "none";
     });
@@ -67,8 +69,9 @@ let humanWins = 0;
 let computerWins = 0;
 const message = document.querySelector('.message');
 const score = document.querySelector('.score');
+const audio = document.querySelectorAll('audio');
 
-const selectionBtns = document.querySelectorAll("button");
+const selectionBtns = document.querySelectorAll("input");
 selectionBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
         if (humanWins < 5 && computerWins < 5) {
