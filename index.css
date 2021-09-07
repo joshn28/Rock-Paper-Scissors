@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     font-family: 'ArcadeClassic', sans-serif;
     text-align: center;
 }
@@ -9,6 +10,9 @@ body {
 }
 span {
     display: block;
+}
+.message {
+    max-height: 100px;
 }
 .score {
     font-size: 50%;
