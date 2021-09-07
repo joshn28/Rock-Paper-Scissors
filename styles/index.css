@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: 'ArcadeClassic', sans-serif;
+    text-align: center;
+}
+
+/*--------------- Scoreboard --------------- */
+.results {
+    font-size: 100px;
+}
+span {
+    display: block;
+}
+.message {
+    max-height: 100px;
+}
+.score {
+    font-size: 50%;
+}
+
+
+/*--------------- Selections --------------- */
+
+div input {
+    display: inline-block;
+    margin: 150px 50px;
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+}
+
+div input:hover {
+    border: 10px solid black;
+    margin: 142px 42px;
+}
