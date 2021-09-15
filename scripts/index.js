@@ -46,9 +46,9 @@ function game() {
 }
 
 function restartGame() {
-    const buttons = document.querySelectorAll('input');
-    buttons.forEach((button) => {
-        button.style.display = "none";
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach((img) => {
+        img.style.display = "none";
     });
     const playAgainBtn = document.createElement('button');
     playAgainBtn.innerText = "Continue?";
@@ -57,8 +57,8 @@ function restartGame() {
         computerWins = 0;
         message.innerText = "Make a Selection";
         score.innerText = "Human: 0 CPU: 0";
-        buttons.forEach((button) => {
-            button.style.display = "inline";
+        imgs.forEach((img) => {
+            img.style.display = "inline";
         });
         document.querySelector('div').removeChild(playAgainBtn);
     });
@@ -71,11 +71,11 @@ const message = document.querySelector('.message');
 const score = document.querySelector('.score');
 const audio = document.querySelectorAll('audio');
 
-const selectionBtns = document.querySelectorAll("input");
-selectionBtns.forEach((button) => {
-    button.addEventListener('click', (e) => {
+const selectionImgs = document.querySelectorAll("img");
+selectionImgs.forEach((img) => {
+    img.addEventListener('click', (e) => {
         if (humanWins < 5 && computerWins < 5) {
-            playRound(e.originalTarget.value, computerPlay());
+            playRound(e.target.id, computerPlay());
         }
         game();
     });
