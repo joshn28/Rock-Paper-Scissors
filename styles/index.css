@@ -32,4 +32,5 @@ div img {
 div img:hover {
     border: 10px solid black;
     margin: 142px 42px;
+    cursor: pointer;
 }
